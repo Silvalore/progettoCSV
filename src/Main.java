@@ -22,7 +22,7 @@ public class Main {
 
                     switch (scelta) {
                         case 1:
-                            gestione.visualizzaDati();
+
                             break;
                         case 2:
                             System.out.print("Inserisci i campi separati da virgola: ");

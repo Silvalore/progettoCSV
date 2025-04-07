@@ -29,6 +29,6 @@ import java.util.Random;
 
         @Override
         public String toString() {
-            return String.join(",", campi) + "," + mioValore + "," + (cancellato ? "1" : "0");
+            return ","+ campi + "," + mioValore + "," + cancellato + "1" + "0";
         }
     }
