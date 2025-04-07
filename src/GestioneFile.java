@@ -11,7 +11,7 @@ import java.util.*;
             leggiCSV();
         }
 
-        // Legge il file CSV e popola la lista dei record
+
         public void leggiCSV() {
             try (BufferedReader br = new BufferedReader(new FileReader("src/silva.csv"))) {
                 String linea;
@@ -33,7 +33,7 @@ import java.util.*;
             }
         }
 
-        // Salva i dati su file
+
         public void salvaCSV() {
             try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/silva.csv"))) {
                 bw.write(String.join(",", intestazione) + "\n");
@@ -46,13 +46,13 @@ import java.util.*;
             }
         }
 
-        // Aggiunge un nuovo record
+
         public void aggiungiRecord(String[] campi) {
             records.add(new Record(campi));
             salvaCSV();
         }
 
-        // Cerca un record per un campo specifico
+
         public Record cercaRecord(int colonna, String valore) {
             for (Record r : records) {
                 if (r.getCampi()[colonna].equals(valore)) {
@@ -62,7 +62,7 @@ import java.util.*;
             return null;
         }
 
-        // Modifica un record esistente
+
         public void modificaRecord(int colonna, String valore, String[] nuoviCampi) {
             Record record = cercaRecord(colonna, valore);
             if (record != null) {
@@ -74,7 +74,7 @@ import java.util.*;
             }
         }
 
-        // Cancella logicamente un record
+
         public void cancellaRecord(int colonna, String valore) {
             Record record = cercaRecord(colonna, valore);
             if (record != null) {
@@ -84,14 +84,4 @@ import java.util.*;
                 System.out.println("Record non trovato.");
             }
         }
-
-        // Mostra i primi 3 campi di tutti i record
-        public void visualizzaDati() {
-            for (Record r : records) {
-                String[] campi = r.getCampi();
-                System.out.println(" | " + String.join(" | ", Arrays.copyOf(campi, Math.min(3, campi.length))));
-            }
-        }
-
-    }
 
